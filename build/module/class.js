@@ -20,22 +20,17 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
-const studentsSchema = new mongoose_1.Schema({
+const classSchema = new mongoose_1.Schema({
     _id: mongoose_1.default.Schema.Types.ObjectId,
-    name: {
-        type: String,
-        require: true
-    },
-    nameClass: {
-        type: mongoose_1.default.Schema.Types.ObjectId,
-        ref: 'class'
-    },
-    age: Number,
-    codeStudents: {
-        type: String,
-        require: true
-    },
-    status: Number
+    name: String,
+    teachers: [{
+            type: mongoose_1.default.Schema.Types.ObjectId,
+            ref: 'teachers'
+        }],
+    students: [{
+            type: mongoose_1.default.Schema.Types.ObjectId,
+            ref: 'students'
+        }]
 });
-const studentsDB = mongoose_1.default.model('students', studentsSchema);
-exports.default = studentsDB;
+const classDB = mongoose_1.default.model('class', classSchema);
+exports.default = classDB;

@@ -1,5 +1,6 @@
 import mongoose, { Schema } from 'mongoose'
-import  { type } from '../type/allType'
+import { subjects } from '../type/subjects'
+
 
 const subjectsSchema: Schema = new Schema({
     _id: mongoose.Schema.Types.ObjectId,
@@ -13,5 +14,5 @@ const subjectsSchema: Schema = new Schema({
         require: true
     }
 })
-const subjectsDB = mongoose.model<type>('subjects', subjectsSchema)
+const subjectsDB = mongoose.model<subjects>('subjects', subjectsSchema)
 export default subjectsDB

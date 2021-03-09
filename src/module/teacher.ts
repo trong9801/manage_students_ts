@@ -1,5 +1,5 @@
 import mongoose, { Schema } from 'mongoose'
-import  { type } from '../type/allType'
+import { teachers } from '../type/teacher'
 
 const teacherSchema: Schema = new Schema({
     _id: mongoose.Schema.Types.ObjectId,
@@ -19,5 +19,5 @@ const teacherSchema: Schema = new Schema({
         ref : 'subjects'
     }]
 })
-const teacherDB = mongoose.model<type>('teachers', teacherSchema)
+const teacherDB = mongoose.model<teachers>('teachers', teacherSchema)
 export default teacherDB

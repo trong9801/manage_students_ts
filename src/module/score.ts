@@ -1,5 +1,4 @@
 import mongoose, {Schema} from 'mongoose'
-import  { type } from '../type/allType'
 import {score} from '../type/score'
 
 const scoresSchema :Schema = new Schema({
